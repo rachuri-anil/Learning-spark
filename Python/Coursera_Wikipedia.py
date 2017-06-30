@@ -37,7 +37,10 @@ def find_between_r( s, first, last ):
 
 def occurenceOfLanguages(s):
     try:
-        if s in ["JavaScript", "Java", "PHP",                 "Python", "C#", "C++", "Ruby",                 "CSS","Objective-C", "Perl","Scala",                  "Haskell", "MATLAB","Clojure", "Groovy"]:
+        if s in ["JavaScript", "Java", "PHP",\
+                 "Python", "C#", "C++", "Ruby",\
+                 "CSS","Objective-C", "Perl","Scala",\
+                 "Haskell", "MATLAB","Clojure", "Groovy"]:
             return s
     except ValueError:
         return ""
@@ -45,7 +48,10 @@ def occurenceOfLanguages(s):
 def find_word(doc):
     try:
         docWords = doc.split(" ")
-        for word in ["JavaScript", "Java", "PHP","Python", "C#", "C++", "Ruby","CSS","Objective-C", "Perl","Scala","Haskell","MATLAB","Clojure","Groovy"]:
+        for word in ["JavaScript", "Java", "PHP",\
+                     "Python", "C#", "C++", "Ruby",\
+                     "CSS","Objective-C", "Perl",\
+                     "Scala","Haskell","MATLAB","Clojure","Groovy"]:
             for w in docWords:
                 if word.lower() in docWords:
                     return word
@@ -95,7 +101,9 @@ def make_inverted_index(doc):
         article = find_between(doc,"<text>","</text>")
         article = article.lower()
         docWords = article.split(" ")
-        for word in ["JavaScript", "Java", "PHP","Python", "C#", "C++", "Ruby","CSS","Objective-C", "Perl","Scala","Haskell","MATLAB","Clojure","Groovy"]:
+        for word in ["JavaScript", "Java", "PHP","Python", "C#",\
+                     "C++", "Ruby","CSS","Objective-C", "Perl",\
+                     "Scala","Haskell","MATLAB","Clojure","Groovy"]:
             if word.lower() in docWords:
                 return (word,article)
     except ValueError:
